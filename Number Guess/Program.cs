@@ -28,7 +28,7 @@ namespace Review
             }
             bool correct = false;
             int ans = rng.Next(1, 10);
-            while (correct == false)
+            while (true) //infinite loop until the user guesses the answer correctly
             { 
                 if (guess == ans)
                 {
@@ -36,11 +36,11 @@ namespace Review
                     string again = Console.ReadLine();
                     if (again.ToLower() == "yes")
                     {
-                        goto start;
+                        goto start; //sends user back to start of program if they want to play again
                     }
                     else
                     {
-                        break;
+                        break; //ends the while and ends the program
                     }
                 }
                 Console.WriteLine("Incorrect! Try again: ");
